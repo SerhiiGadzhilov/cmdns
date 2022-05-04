@@ -644,7 +644,7 @@ open_service_sockets(int* sockets, int max_sockets) {
 // Send a DNS-SD query
 static int
 send_dns_sd(void) {
-    int sockets[32] = {};
+    int sockets[32] = {0};
 	int num_sockets = open_client_sockets(sockets, sizeof(sockets) / sizeof(sockets[0]), 0);
 	if (num_sockets <= 0) {
 		printf("Failed to open any client sockets\n");
